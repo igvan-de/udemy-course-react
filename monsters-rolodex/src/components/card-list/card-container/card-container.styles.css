@@ -1,0 +1,37 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #95dada;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+    align-items: center;
+}
+
+    .card-container_img {
+        width: 15rem;
+    }
+
+    .card-container_name {
+        font-family: 'rumbaz-demo';
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .card-container_email {
+        font-size: 1.2rem;
+    }
+
+    /* HOVER */
+    .card-container:hover {
+        transform: scale(1.05);
+    }
+    
+    .card-container:hover .card-container_name {
+        color: cornflowerblue;
+    }
