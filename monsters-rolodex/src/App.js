@@ -11,14 +11,14 @@ class App extends Component {
       monsters: [],
       searchField: '',
     };
-  }
+  };
 
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((users) => this.setState({monsters: users}))
       .catch(error => console.log('An error occured! ' + error))
-  }
+  };
 
   onSearchChange = (event) => {
     const searchField = event.target.value.toLocaleLowerCase();
@@ -48,7 +48,7 @@ class App extends Component {
 
       </div>
     );  
-  }
+  };
 }
 
 export default App;
