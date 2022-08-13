@@ -1,4 +1,4 @@
-import './App.css';
+import './categories.styles.scss';
 
 const App = () => {
 
@@ -31,12 +31,14 @@ const App = () => {
   ];
 
   return (
-    <div className="catagories-container">
+    <div className="categories-container">
       {
         catagories.map(category => {
           return (
             <div className='category-container' key={category.id}>
-              <img src={category.img}/>
+              <div className='category-container_background-image'>
+                <img alt={`category-${category.title}`} src={category.img}/>
+              </div>
               <div className='category-container_body'>
                 <h2>{category.title}</h2>
                 <p>Shop Now</p>
