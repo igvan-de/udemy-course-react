@@ -1,0 +1,27 @@
+.navigation-bar {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  
+    .navigation-bar_logo-container {
+      height: 100%;
+      width: 70px;
+      padding: 0.7rem 1rem;
+    }
+  
+    .navigation-bar_list-container {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      
+      .navigation-bar_list-container-link {
+        font-size: 1.1rem;
+        padding: 0.7rem 1rem;
+        cursor: pointer;
+      }
+    }
+  }
