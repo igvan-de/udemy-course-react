@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { createAuthUserWithEmailAndPassword, createUSerDocumentFromAuth } from '../../utils/firebase/firebase.utils';
+import Button from "../button/button.component";
+import FormInput from "../form-input/form-input.component";
+import './sign-up.styles.scss';
 
 const defaultFormFields = {
     displayName:        '',
@@ -45,21 +48,15 @@ const SingUpForm = () => {
     };
 
     return (
-        <div>
-            <h2>Sing up with your email and password</h2>
+        <div className="sign-up-container">
+            <h2>I don't have an account</h2>
+            <span>Sing up with your email and password</span>
             <form onSubmit={handleSubmit}>
-                <label>Display Name</label>
-                <input type='text' required onChange={handleChange} name='displayName' value={displayName} placeholder='Display name you like'/>
-
-                <label>Email</label>
-                <input type='email' required onChange={handleChange} name='email' value={email} placeholder='Your email'/>
-
-                <label>Password</label>
-                <input type='password' required onChange={handleChange} name='password' value={password} placeholder='Your password'/>
-
-                <label>Confirm Password</label>
-                <input type='password' required onChange={handleChange} name='confirmedPassword' value={confirmedPassword} placeholder='Plase confirm your password'/>
-                <button type='submit'>Sing Up</button>
+                <FormInput label='Display Name' type='text' required onChange={handleChange} name='displayName' value={displayName}/>
+                <FormInput label='Email' type='email' required onChange={handleChange} name='email' value={email}/>
+                <FormInput label='Password' type='password' required onChange={handleChange} name='password' value={password}/>
+                <FormInput label='ConfirmPassword' type='password' required onChange={handleChange} name='confirmedPassword' value={confirmedPassword}/>
+                <Button type='submit' buttonName={'Sign up'}/>
             </form>
         </div>
     );
