@@ -23,6 +23,16 @@
       border: 1px solid black;
     }
   
+    &.sign-up {
+      background-color: #5742f4;
+      color: white;
+  
+      &:hover {
+        background-color: #4c38e3fc;
+        border: none;
+      }
+    }
+
     &.google-sign-in {
       background-color: #4285f4;
       color: white;

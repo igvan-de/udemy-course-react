@@ -5,7 +5,10 @@ import {
         // signInWithGooglePopup,
         createUSerDocumentFromAuth, 
         signInWithGoogleRedirect } from '../../utils/firebase/firebase.utils';
-import SingUpForm from '../../components/sign-up/sign-up.component';
+import SignInForm from '../../components/sign-in-form/sing-in-form.component';
+import SignUpForm from '../../components/sign-up-form/sign-up-form.component';
+import "./sign-in.styles.scss";
+
 
 const SignIn = () => {
     useEffect(() => {
@@ -26,16 +29,17 @@ const SignIn = () => {
     // };
     
     return (
-        <div>
+        <div className='sign-in-page-container'>
+            <SignInForm />
             {
             /* <button onClick={logGoogleUser}>
                 Sign in with Google account
             </button> */
             }
-            <button onClick={signInWithGoogleRedirect}>
+            {/* <button onClick={signInWithGoogleRedirect}>
                 Sign in with Google redirect
-            </button>
-            <SingUpForm/>
+            </button> */}
+            <SignUpForm/>
         </div>
     )
 }

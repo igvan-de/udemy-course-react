@@ -1,13 +1,13 @@
 import './button.styles.scss';
 
 const BUTTON_TYPE_CLASSES = {
+    signUp:     'sign-up',
     google:     'google-sign-in',
     inveted:    'inveted',
 }
  
 const Button = ({buttonName, buttonType, ...otherProps}) => {
-
-    console.log(buttonName);
+    console.log(buttonType);
 
     return (
         <button 
