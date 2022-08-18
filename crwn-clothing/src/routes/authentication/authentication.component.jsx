@@ -3,19 +3,19 @@ import { getRedirectResult } from 'firebase/auth';
 import { 
         auth, 
         // signInWithGooglePopup,
-        createUSerDocumentFromAuth, 
+        createUserDocumentFromAuth, 
         signInWithGoogleRedirect } from '../../utils/firebase/firebase.utils';
 import SignInForm from '../../components/sign-in-form/sing-in-form.component';
 import SignUpForm from '../../components/sign-up-form/sign-up-form.component';
-import "./sign-in.styles.scss";
+import "./authentication.styles.scss";
 
 
-const SignIn = () => {
+const Authentication = () => {
     useEffect(() => {
         async function fetchData() {
             const response = await getRedirectResult(auth);
             if (response) {
-                const userDocRef = await createUSerDocumentFromAuth(response.user);
+                const userDocRef = await createUserDocumentFromAuth(response.user);
             }
         }
         fetchData() 
@@ -25,7 +25,7 @@ const SignIn = () => {
     // CAN BE USED IF WE WANT TO GO FOR A GOOGLE POPUP GMAIL SIGN IN METHOD
     // const logGoogleUser = async() => {
     //     const {user} = await signInWithGooglePopup();
-    //     const userDocRef = await createUSerDocumentFromAuth(user);
+    //     await createUSerDocumentFromAuth(user);
     // };
     
     return (
@@ -44,4 +44,4 @@ const SignIn = () => {
     )
 }
 
-export default SignIn;
+export default Authentication;
