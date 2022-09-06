@@ -4,11 +4,11 @@ import {
         auth, 
         // signInWithGooglePopup,
         createUserDocumentFromAuth, 
-        signInWithGoogleRedirect } from '../../utils/firebase/firebase.utils';
+        // signInWithGoogleRedirect 
+    } from '../../utils/firebase/firebase.utils';
 import SignInForm from '../../components/sign-in-form/sing-in-form.component';
 import SignUpForm from '../../components/sign-up-form/sign-up-form.component';
 import "./authentication.styles.scss";
-
 
 const Authentication = () => {
     useEffect(() => {

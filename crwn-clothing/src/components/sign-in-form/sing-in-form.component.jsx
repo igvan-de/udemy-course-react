@@ -1,8 +1,9 @@
 import Button from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./sign-in-form.styles.scss";
 import { signInEmailAndPassword, signInWithGoogleRedirect } from "../../utils/firebase/firebase.utils";
+import { UserContext } from "../../context/user.context";
 
 const defaultFormFields = {
     email:              '',
@@ -12,6 +13,7 @@ const defaultFormFields = {
 const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {email, password} = formFields;
+    const { setCurrentUser } = useContext(UserContext);
 
     const resetFromFields = () => {
         setFormFields(defaultFormFields);
@@ -28,8 +30,11 @@ const SignInForm = () => {
         event.preventDefault();
         
         try {
-            await signInEmailAndPassword(email, password);
-            resetFromFields();
+            const response = await signInEmailAndPassword(email, password);
+            if (response != null) {
+                setCurrentUser();
+                resetFromFields();
+            }
         } catch(error) {
             switch(error.code) {
                 case 'auth/wrongPassword': {
