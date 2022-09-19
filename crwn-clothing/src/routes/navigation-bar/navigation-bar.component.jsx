@@ -12,8 +12,6 @@ const NavigationBar = () => {
         setCurrentUser(null);
     } 
 
-    // TODO: remove console.log()
-    console.log(currentUser);
     return (
         <Fragment>
             <div className="navigation-bar">

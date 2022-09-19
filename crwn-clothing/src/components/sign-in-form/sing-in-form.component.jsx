@@ -32,7 +32,7 @@ const SignInForm = () => {
         try {
             const response = await signInEmailAndPassword(email, password);
             if (response != null) {
-                setCurrentUser();
+                setCurrentUser(response);
                 resetFromFields();
             }
         } catch(error) {
